@@ -1,0 +1,15 @@
+** uname
+A tiny library binding for libc uname(),
+supporting Linux, and BSDs.
+
+** Usage
+#+begin_src rust
+  let mut uts = Utsname::new();
+  if Utsname::uname(&mut uts).is_err() {
+      panic!("Utsname::uname() panicked.");
+  }
+
+  println!("{}", uts.sysname);
+#+end_src
+
+Also, see the test section, inside the library.
